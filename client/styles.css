@@ -1,0 +1,71 @@
+.disable {
+  cursor:not-allowed;
+}
+.disable tr {
+  pointer-events: none;
+}
+.Menu {
+  min-height:100vh;
+  margin:0;
+  border-right:1px solid #ccc;
+}
+.matrixWrap {
+  width:100%;
+  margin:30px 0;
+}
+.matrixColumn {
+  position:relative;
+  text-align:center;
+  background-color:#BDBDBD;
+  padding:15px 0 !important;
+  color:transparent;
+}
+.piece {
+    position: absolute;
+    height: 30px;
+    top: calc(50% - 15px);
+    width: 30px;
+    left: calc(50% - 15px);
+    background-color: black;
+    border-radius: 60%;
+    box-shadow:1px 1px 1px black;
+}
+.piece-alt {
+  background-color:white;
+}
+.Col::after {
+  content: '';
+  position: absolute;
+  height: calc(100% + 1px);
+  background-color: red;
+  width: 2px;
+  top: 0;
+  left: calc(50% - 1px);
+}
+.Row::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  background-color: red;
+  width: calc(100% + 1px);
+  top: calc(50% - 1px);
+  left: 0;
+}
+.DR {
+  content: '';
+  background: linear-gradient(to top right,
+    rgb(189, 189, 189) 0%,
+    rgb(189, 189, 189) calc(50% - 0.8px),
+    rgb(255, 0, 0) 50%,
+    rgb(189, 189, 189) calc(50% + 0.8px),
+    rgb(189, 189, 189) 100%);
+}
+.DL {
+  content: '';
+  background: linear-gradient(to top left,
+    rgb(189, 189, 189) 0%,
+    rgb(189, 189, 189) calc(50% - 0.8px),
+    rgb(255, 0, 0) 50%,
+    rgb(189, 189, 189) calc(50% + 0.8px),
+    rgb(189, 189, 189) 100%);
+}
