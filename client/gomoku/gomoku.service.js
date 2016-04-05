@@ -3,8 +3,8 @@ angular.module('testApp')
   var gridSize;
 return {
   setGrid:function(size){
-    if (size < 15) {
-      size = 15;
+    if (size < 10) {
+      size = 10;
     } else if (size > 30){
       size = 30;
     }

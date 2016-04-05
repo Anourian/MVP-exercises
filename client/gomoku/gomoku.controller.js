@@ -13,16 +13,20 @@ angular.module('testApp')
   };
   $scope.construct($scope.gridSize);
   $scope.turn = 'Black';
-  $scope.addPiece = function (row, column){    
-    $scope.matrix[row][column].value= $scope.turn;
-    var found = $scope.checkBoard(row, column, $scope.turn);
-    if (found){
-      return;
-    }
-    if ($scope.turn === 'Black'){
-      $scope.turn = 'White'
+  $scope.addPiece = function (row, column){ 
+    if ($scope.matrix[row][column].value){
+      return
     } else {
-      $scope.turn = 'Black';
+      $scope.matrix[row][column].value= $scope.turn;
+      var found = $scope.checkBoard(row, column, $scope.turn);
+      if (found){
+        return;
+      }
+      if ($scope.turn === 'Black'){
+        $scope.turn = 'White'
+      } else {
+        $scope.turn = 'Black';
+      }      
     }
   };
   $scope.checkBoard = function (row, column, turn){

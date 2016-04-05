@@ -1,5 +1,5 @@
 .disable {
-  cursor:not-allowed;
+  cursor:not-allowed !important;
 }
 .disable tr {
   pointer-events: none;
@@ -9,9 +9,14 @@
   margin:0;
   border-right:1px solid #ccc;
 }
+.Body {
+  overflow-y:scroll;
+  height:100vh;
+}
 .matrixWrap {
   width:100%;
   margin:30px 0;
+  cursor:pointer;
 }
 .matrixColumn {
   position:relative;
@@ -33,39 +38,61 @@
 .piece-alt {
   background-color:white;
 }
-.Col::after {
+.Row {
   content: '';
-  position: absolute;
-  height: calc(100% + 1px);
-  background-color: red;
-  width: 2px;
-  top: 0;
-  left: calc(50% - 1px);
+  background: linear-gradient(to top,
+    rgb(189, 189, 189) 0%,
+    rgb(189, 189, 189) calc(50% - 1px),
+    rgb(255, 0, 0) 50%,
+    rgb(189, 189, 189) calc(50% + 1px),
+    rgb(189, 189, 189) 100%);
 }
-.Row::after {
+.Col {
   content: '';
-  position: absolute;
-  height: 2px;
-  background-color: red;
-  width: calc(100% + 1px);
-  top: calc(50% - 1px);
-  left: 0;
+  background: linear-gradient(to left,
+    rgb(189, 189, 189) 0%,
+    rgb(189, 189, 189) calc(50% - 1px),
+    rgb(255, 0, 0) 50%,
+    rgb(189, 189, 189) calc(50% + 1px),
+    rgb(189, 189, 189) 100%);
 }
 .DR {
   content: '';
   background: linear-gradient(to top right,
     rgb(189, 189, 189) 0%,
-    rgb(189, 189, 189) calc(50% - 0.8px),
+    rgb(189, 189, 189) calc(50% - 1px),
     rgb(255, 0, 0) 50%,
-    rgb(189, 189, 189) calc(50% + 0.8px),
+    rgb(189, 189, 189) calc(50% + 1px),
     rgb(189, 189, 189) 100%);
 }
 .DL {
   content: '';
   background: linear-gradient(to top left,
     rgb(189, 189, 189) 0%,
-    rgb(189, 189, 189) calc(50% - 0.8px),
+    rgb(189, 189, 189) calc(50% - 1px),
     rgb(255, 0, 0) 50%,
-    rgb(189, 189, 189) calc(50% + 0.8px),
+    rgb(189, 189, 189) calc(50% + 1px),
     rgb(189, 189, 189) 100%);
+}
+.hoverB:hover::after {
+    height: 30px;
+    top: calc(50% - 15px);
+    width: 30px;
+    left: calc(50% - 15px);
+    background-color: black;
+    border-radius: 60%;
+    position: absolute;
+    z-index: 5;
+    content: "";
+}
+.hoverW:hover::after {
+    height: 30px;
+    top: calc(50% - 15px);
+    width: 30px;
+    left: calc(50% - 15px);
+    background-color: white;
+    border-radius: 60%;
+    position: absolute;
+    z-index: 5;
+    content: "";
 }

@@ -1,4 +1,4 @@
 angular.module('testApp')
 .controller('mainController', function($scope,gomokuService, $location ){
-  $scope.grid = 15;
+  $scope.grid = 10;
 });

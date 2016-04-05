@@ -1,0 +1,12 @@
+<div>
+<h1><span ng-hide='match'>Player Turn</span><span ng-show='match'>Winner</span>: {{turn}}</h1>
+  <table class='matrixWrap table table-bordered' ng-class="{'disable':match}">
+    <tr ng-repeat='row in matrix' class="matrixRow" ng-init='rowIndex = $index'>
+      <td ng-repeat='column in row' class="matrixColumn" ng-init='columnIndex = $index' ng-click='addPiece(rowIndex, columnIndex)' ng-class="{'Col': column.type === 'Col','Row': column.type === 'Row', 'DL':column.type === 'DL', 'DR':column.type==='DR', 'hoverB': turn === 'Black' && !column.value, 'hoverW': turn==='White' && !column.value}">
+        <!-- {{rowIndex}}, {{columnIndex}} -->
+        0
+        <span ng-if='column.value' class='piece' ng-class="{'piece-alt': column.value==='White'}">{{column.value}}</span>
+      </td>
+    </tr>  
+  </table>
+</div>

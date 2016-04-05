@@ -4,7 +4,7 @@ angular.module('testApp')
   $stateProvider
     .state('home',{
       url:'/',
-      templateUrl:'client/main.template.html',
+      templateUrl:'client/main/main.template.html',
       controller:'mainController',
       abstract: true,
     })
@@ -16,7 +16,7 @@ angular.module('testApp')
     .state('home.gomoku', {
       parent:'home',
       url:'gomoku/grid/:amount',
-      templateUrl:'client/gomoku.html',
+      templateUrl:'client/gomoku/gomoku.html',
       controller:'gomokuController',      
       resolve: {
         setInitial:function(gomokuService, $stateParams){
