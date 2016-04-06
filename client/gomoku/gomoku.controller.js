@@ -1,6 +1,7 @@
 angular.module('testApp')
-.controller('gomokuController', function(gomokuService, $scope){
+.controller('gomokuController', function(gomokuService, $scope,$state){
   $scope.gridSize = gomokuService.getGrid();
+  $scope.$state = $state;
   $scope.matrix = [];
   $scope.construct = function (val){
     for (var i =0; i < val ; i ++){

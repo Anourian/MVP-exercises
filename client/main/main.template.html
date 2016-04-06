@@ -7,8 +7,8 @@
           <input id='grid' ng-model='grid' type='number' min="10" max="30" minlength='0' maxlength='2' class="form-control"/>        
         </div>
         <div class="form-group">
-          <a ng-if="$state.current.name !== 'home.gomoku'" ng-href="#/gomoku/grid/{{grid}}" class="btn btn-primary">Create Grid</a>
-          <a ng-if="$state.current.name === 'home.gomoku'" ng-click="$state.reload()" class="btn btn-primary">Create Grid</a>     
+          <a ng-if="$state.current.name !== 'home.gomoku' || grid != size" ng-href="#/gomoku/grid/{{grid}}" class="btn btn-primary" ng-click='refresh()'>Create Grid</a>
+          <a ng-if="$state.current.name === 'home.gomoku' && grid == size" ng-click="$state.reload()" class="btn btn-primary">Create Grid</a>     
         </div>
       </form>
     </div>
